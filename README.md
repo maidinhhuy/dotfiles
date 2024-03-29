@@ -1,1 +1,2 @@
-# dotfiles
+# huymaidinh Dotfiles
+- Using lazyvim

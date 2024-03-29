@@ -66,3 +66,20 @@ vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "red", line
 -- Tabs
 vim.keymap.set("n", "<S-h>", "<cmd>bprev<cr>", { desc = "Previous buffer", silent = true })
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer", silent = true })
+vim.keymap.set("n", "<C-w>", "<cmd>bd<cr>", { desc = "Close buffer", silent = true })
+
+function attach_to_debug()
+	local dap = require("dap")
+	dap.configurations.java = {
+		{
+			type = "java",
+			request = "attach",
+			name = "Attach to the proccess",
+			hostName = "localhost",
+			port = "5005",
+		},
+	}
+	dap.continue()
+end
+
+vim.keymap.set("n", "<leader>dA", ":lua attach_to_debug()<CR>")
