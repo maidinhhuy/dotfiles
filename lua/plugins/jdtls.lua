@@ -172,7 +172,8 @@ return {
 						end
 					end
 
-					function nnoremap(rhs, lhs, bufopts, desc)
+					function nnoremap(rhs, lhs, desc)
+						local bufopts = {}
 						bufopts.desc = desc
 						vim.keymap.set("n", rhs, lhs, bufopts)
 					end
@@ -219,6 +220,6 @@ return {
 		})
 
 		-- Avoid race condition by calling attach the first time, since the autocmd won't fire.
-		attach_jdtls()
+		-- attach_jdtls()
 	end,
 }

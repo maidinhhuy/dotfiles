@@ -8,6 +8,8 @@ Implements 4 methods:
 --]]
 
 local ts_utils = require("nvim-treesitter.ts_utils")
+local config = {}
+
 config["on_attach"] = function(client, bufnr)
 	-- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
 	-- you make during a debug session immediately.
