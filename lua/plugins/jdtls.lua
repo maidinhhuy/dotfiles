@@ -73,6 +73,13 @@ return {
 							enabled = "all",
 						},
 					},
+					format = {
+						enabled = true,
+						settings = {
+							url = "file://" .. vim.fn.expand("~/.config/jdtls/google-style.xml"),
+							profile = "GoogleStyle",
+						},
+					},
 				},
 			},
 		}
@@ -237,4 +244,3 @@ return {
 		attach_jdtls()
 	end,
 }
-
